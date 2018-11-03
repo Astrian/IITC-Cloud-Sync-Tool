@@ -17,11 +17,11 @@ function exp() { // 导出数据
 chrome.storage.sync.get(['iitcdata', 'interval'], res => {
   if (res.iitcdata){
     localStorage.clear()
-    let impdata = res.iitcdata
-    for (let i in impdata) {
-      if (typeof impdata[i] === 'object') impdata[i] = JSON.stringify(impdata[i])
-      localStorage.setItem(i, impdata[i])
-    }
+  }
+  let impdata = res.iitcdata
+  for (let i in impdata) {
+    if (typeof impdata[i] === 'object') impdata[i] = JSON.stringify(impdata[i])
+    localStorage.setItem(i, impdata[i])
   }
   setInterval(() => {
     chrome.storage.sync.set({'iitcdata': exp()}, () => {})
