@@ -1,7 +1,8 @@
 let app = new Vue({
   el: '#app',
   data: {
-    interval: 0
+    interval: 0,
+    extensionid: ''
   },
   methods: {
     goToIntel() {
@@ -14,10 +15,14 @@ let app = new Vue({
       })
     },
     goToSettings() {
-      console.log('aaa')
+      chrome.tabs.create({ url: `chrome-extension://${this.extensionid}/pages/datamanage/datamanage.html` }, () => {})
+    },
+    goToAbout() {
+      chrome.tabs.create({ url: `chrome-extension://${this.extensionid}/pages/about/about.html` }, () => {})
     }
   },
   created() {
+    this.extensionid = chrome.runtime.id
     let that = this
     chrome.storage.sync.get(['interval'], res => {
       that.interval = res.interval
