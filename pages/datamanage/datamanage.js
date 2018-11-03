@@ -1,7 +1,7 @@
 let app = new Vue({
   el: '.container',
   data: {
-    clouddata: [{ key: '' }],
+    clouddata: [],
     editModal: {
       index: 0
     }
