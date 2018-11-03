@@ -1,3 +1,7 @@
 chrome.runtime.onInstalled.addListener(() => {
-  // do something
+  chrome.storage.sync.get(['interval'], res => {
+    if (res.interval) return
+    alert('Thanks for installing ICST!')
+    chrome.storage.sync.set({'interval': 30000}, res => {})
+  })
 })
