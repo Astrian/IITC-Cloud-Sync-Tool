@@ -15,6 +15,7 @@ function exp() { // 导出数据
 }
 
 chrome.storage.sync.get(['iitcdata', 'interval'], res => {
+  console.log(res)
   if (res.iitcdata){
     localStorage.clear()
   }
@@ -23,6 +24,8 @@ chrome.storage.sync.get(['iitcdata', 'interval'], res => {
     if (typeof impdata[i] === 'object') impdata[i] = JSON.stringify(impdata[i])
     localStorage.setItem(i, impdata[i])
   }
+  console.log(exp())
+  chrome.storage.sync.set({'iitcdata': exp()}, () => {})
   setInterval(() => {
     chrome.storage.sync.set({'iitcdata': exp()}, () => {})
   }, res.interval)

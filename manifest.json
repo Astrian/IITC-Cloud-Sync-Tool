@@ -15,7 +15,7 @@
       "48": "resources/actionbar-icon/48.png",
       "128": "resources/actionbar-icon/128.png"
     },
-    "default_popup": "popup.html"
+    "default_popup": "pages/popup/popup.html"
   },
   "content_scripts": [{
     "matches": ["https://intel.ingress.com/*"],
