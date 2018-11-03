@@ -17,6 +17,7 @@
     },
     "default_popup": "pages/popup/popup.html"
   },
+  "icons": {"115": "resources/logo/logo.png"},
   "content_scripts": [{
     "matches": ["https://intel.ingress.com/*"],
     "js": ["storagegetter.js"]
