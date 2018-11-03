@@ -53,7 +53,7 @@ let app = new Vue({
     textareacontent: {
       get() {
         try {
-          return JSON.parse(this.clouddata[this.editModal.index].data)
+          return JSON.stringify(this.clouddata[this.editModal.index].data)
         } catch (e) {
           return this.clouddata[this.editModal.index].data
         }
