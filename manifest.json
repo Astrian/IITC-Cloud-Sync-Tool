@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "IITC Cloud Sync Tool",
-  "description": "Help IITC user to sync their IITC plugin data between PCs and Chromes.",
+  "description": "Help IITC users to sync their IITC plugin data between PCs and Chromes.",
   "version": "0.0.1",
 
   "permissions": [
