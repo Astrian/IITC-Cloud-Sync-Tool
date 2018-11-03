@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "IITC Cloud Sync Tool",
+  "description": "Help IITC user to sync their IITC plugin data between PCs and Chromes.",
+  "version": "0.0.1",
+
+  "permissions": [
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://intel.ingress.com/*"],
+    "js": ["storagegetter.js"]
+  }]
+}
