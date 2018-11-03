@@ -52,11 +52,8 @@ let app = new Vue({
   computed: {
     textareacontent: {
       get() {
-        try {
-          return JSON.stringify(this.clouddata[this.editModal.index].data)
-        } catch (e) {
-          return this.clouddata[this.editModal.index].data
-        }
+        if (typeof this.clouddata[this.editModal.index].data === 'object') return JSON.stringify(this.clouddata[this.editModal.index].data)
+        else return this.clouddata[this.editModal.index].data
       },
       set(res) {
         try {
