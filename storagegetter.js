@@ -15,7 +15,6 @@ function exp() { // 导出数据
 }
 
 chrome.storage.sync.get(['iitcdata', 'interval'], res => {
-  console.log('ICST Log: storage res: ', res)
   if (res.iitcdata){
     localStorage.clear()
     let impdata = res.iitcdata
