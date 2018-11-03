@@ -1,0 +1,116 @@
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manage my cloud data - IITC Cloud Sync Tool</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>IITC Cloud Sync Tool</h1>
+      <div class="row">
+        <div class="col-3">
+          <div class="list-group">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/pages/datamanage/datamanage.html">Data Manage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/about/about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9">
+          <h2>Manage my cloud data</h2>
+          <p>You can manage all your ICST cloud data here. Edit here may effect your IITC local storage.</p>
+          <div v-if="clouddata.length">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Key</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(item, index) in clouddata" :key="index">
+                  <th scope="row">{{index + 1}}</th>
+                  <td><code>{{item.key}}</code></td>
+                  <td><pre>{{item.data}}</pre></td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-dark" @click="remove(index)">Remove</button>
+                      <button type="button" class="btn btn-dark" @click="edit(index)">Edit</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>You can also try clear all your ICST cloud data in “keep safe mode” or not. Please notice that “keep safe mode” means that your local storage of IITC will NOT be effected in this mode. ICST will try to re-upload IITC data from your Chrome local storage.</p>
+            <p>
+              <button type="button" class="btn btn-dark" @click="cleanalldatasave">Keep safe and clean all ICST cloud data</button>
+              <button type="button" class="btn btn-dark" @click="cleanalldata">Force clean all ICST & IITC data</button>
+            </p>
+            <p>All changes will be effected next time you launch Ingress Intel map.</p>
+          </div>
+          <p v-else><i>You have no any cloud data in ICST.</i></p>
+        </div>
+      </div>
+      <div v-if="clouddata.length" class="modal" tabindex="-1" id="edit" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit {{clouddata[editModal.index].key}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Your edit will effect to ICST in realtime. Copy to a JSON or text editor and paste here after edited is recommened.</p>
+              <p><textarea rows="6" v-model="textareacontent"></textarea></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #000;
+      color: #5afbea;
+      padding: 18px;
+    }
+    .nav .nav-item .nav-link {
+      color: #5afbea;
+      filter: opacity(0.8);
+    }
+    .nav .nav-item .nav-link:hover {
+      filter: opacity(1);
+    }
+    .nav .nav-item .nav-link.active {
+      color: white;
+    }
+    code, pre {
+      color: #5afbea;
+    }
+    .modal {
+      color: #000;
+    }
+    textarea {
+      width: 100%;
+      border-radius: 4px;
+      border-color: rgb(17, 143, 166);
+      outline: none;
+      resize: none;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./datamanage.js"></script>
+</html>

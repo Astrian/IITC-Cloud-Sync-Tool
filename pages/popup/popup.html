@@ -1,0 +1,46 @@
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="pagetitle">IITC Cloud Sync Tool</h1>
+      <p><button @click="goToIntel" type="button" class="btn btn-dark">Launch Ingress intel map</button></p>
+      <h2 class="optiontitle">Sync to cloud interval</h2>
+      <p>When you using IITC, ICST will sync with cloud every interval. Change will be effected in next time to launch Intel map.</p>
+      <div class="btn-group" role="group">
+        <button type="button" @click="justifyInterval(60000)" :class="interval === 60000 ? 'active' : ''" class="btn btn-dark">1m</button>
+        <button type="button" @click="justifyInterval(300000)" :class="interval === 300000 ? 'active' : ''" class="btn btn-dark">5m</button>
+        <button type="button" @click="justifyInterval(600000)" :class="interval === 600000 ? 'active' : ''" class="btn btn-dark">10m</button>
+        <button type="button" @click="justifyInterval(1800000)" :class="interval === 1800000 ? 'active' : ''" class="btn btn-dark">30m</button>
+        <button type="button" @click="justifyInterval(3600000)" :class="interval === 3600000 ? 'active' : ''" class="btn btn-dark">1h</button>
+      </div>
+      <h2 class="optiontitle">More</h2>
+      <p>
+        <button @click="goToSettings" type="button" class="btn btn-dark">Manage my cloud data</button>
+        <button @click="goToAbout" type="button" class="btn btn-dark">About ICST...</button>
+      </p>
+    </div>
+  </body>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    #app {
+      width: 400px;
+      background-color: #000;
+      color: #5afbea;
+      padding: 18px;
+    }
+    .pagetitle {
+      font-size: 30px;
+    }
+    .optiontitle {
+      font-size: 25px;
+      padding-top: 18px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./popup.js"></script>
+</html>
