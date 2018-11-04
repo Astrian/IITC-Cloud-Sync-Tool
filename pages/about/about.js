@@ -1,6 +1,8 @@
 let app = new Vue({
   el: '.container',
-  data: {},
+  data: {
+    showqrcode: false
+  },
   methods: {},
   created() {},
   computed: {}

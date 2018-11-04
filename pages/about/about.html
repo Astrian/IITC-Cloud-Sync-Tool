@@ -21,14 +21,19 @@
         </div>
         <div class="col-9">
           <h2>About ICST</h2>
-          <p>Version 0.0.1</p>
+          <p>Version 0.0.1 (Build 2)</p>
           <p>Created by Astrian Zheng from China. With ❤️.</p>
-          <h3>Acknowledgement & Licenses</h3>
+          <h3>Acknowledgement & Credits</h3>
+          <p>The source code of ICST is under MIT license. <a target="_blank" href="https://github.com/Astrian/IITC-Cloud-Sync-Tool">See source code here.</a></p>
           <p>Icon illustrated by HodenLon.</p>
-          <p>Thanks to <a href="https://github.com/vuejs/vue">Vue.js</a> and <a href="https://github.com/twbs/bootstrap">Bootstrap</a>.</p>
+          <p>ICST is using <a target="_blank" href="https://github.com/vuejs/vue/blob/dev/LICENSE">Vue.js</a> and <a target="_blank" href="https://github.com/twbs/bootstrap/blob/v4-dev/LICENSE">Bootstrap</a>.</p>
           <h3>Feedback</h3>
-          <p>You can submit your feedback to ICST project's issues page.</p>
-          <a href="https://github.com/Astrian/IITC-Cloud-Sync-Tool/issues"><button type="button" class="btn btn-dark">Go to issues page</button></a>
+          <p>You can submit your feedback to ICST project's issues page or write a email to me.</p>
+          <p><a target="_blank" href="https://github.com/Astrian/IITC-Cloud-Sync-Tool/issues"><button type="button" class="btn btn-dark">Go to issues page</button></a> <a target="_blank" href="mailto:chromeextension@astrianzheng.cn"><button type="button" class="btn btn-dark">Write a mail</button></a></p>
+          <h3>Donate</h3>
+          <p>If you think my extension is useful, please consider to donate to me</p>
+          <p><a target="_blank" href="https://paypal.me/AstrianZheng"><button type="button" class="btn btn-dark">Donate with PayPal (recommended)</button></a> <button type="button" @click="showqrcode = !showqrcode" class="btn btn-dark">{{showqrcode ? 'Hide QR Code' : 'Donate with Alipay'}}</button></p>
+          <p v-if="showqrcode"><img src="../../resources/images/qrcode.jpg" /></p>
         </div>
       </div>
     </div>
@@ -52,6 +57,9 @@
     }
     a, a:hover {
       color: white;
+    }
+    img {
+      width: 200px;
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
