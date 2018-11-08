@@ -3,8 +3,8 @@
 
   "name": "IITC Cloud Sync Tool",
   "description": "Help IITC users to sync their IITC plugin data between PCs and Chromes.",
-  "version": "0.0.2",
-  "version_name": "0.0.2 (Build 2)",
+  "version": "3",
+  "version_name": "0.0.2 (Build 3)",
 
   "permissions": [
     "storage",
