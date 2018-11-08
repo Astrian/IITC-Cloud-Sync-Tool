@@ -1,0 +1,36 @@
+#app {
+  width: 400px;
+  color: #5afbea;
+  font-family: exo-regular;
+}
+.container {
+  padding: 18px;
+}
+.pagetitle {
+  font-size: 30px;
+  font-family: exo-bold;
+}
+.optiontitle {
+  font-size: 25px;
+  padding-top: 18px;
+  font-family: exo-bold;
+}
+
+/* Class Cyan Theme */
+.classic-cyan {
+  color: #5afbea;
+}
+.classic-cyan.container {
+  background-color: #000;
+}
+
+/* Prime Purple Theme */
+.prime-purple h1, .prime-purple h2, .prime-purple h3, .prime-purple h4, .prime-purple h5, .prime-purple h6 {
+  color: #9AA4F8;
+}
+.prime-purple p {
+  color: #7982E0;
+}
+.prime-purple.container {
+  background-color: #040F1C;
+}
