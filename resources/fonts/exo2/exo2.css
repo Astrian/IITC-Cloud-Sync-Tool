@@ -1,0 +1,9 @@
+@font-face{
+    font-family: 'exo-regular';
+    src : url('Exo2-Regular.otf');
+}
+
+@font-face{
+    font-family: 'exo-bold';
+    src : url('Exo2-SemiBold.otf');
+}
