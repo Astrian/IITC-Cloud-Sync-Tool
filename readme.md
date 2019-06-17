@@ -1,10 +1,9 @@
 # IITC Cloud Sync Tool
 
-## NOTICE
+## EMERGENCY ANNOUNCEMENT
+ICST just banned by Google Chrome WebStore, and you may notice that you cannot find ICST extension from WebStore or the extension doesn't work or been removed from your Google Chrome.
 
-This Extension is in Beta status. Submit your feedback at [issues page](https://github.com/Astrian/IITC-Cloud-Sync-Tool/issues).
-
-Use Chrome sync function to sync your data in IITC plugins, and manage all IITC data in one page.
+For more details, see [the issue](https://github.com/Astrian/IITC-Cloud-Sync-Tool/issues/7) please.
 
 ## How does it work?
 

@@ -1,7 +1,8 @@
 let app = new Vue({
-  el: '.container',
+  el: '#vue',
   data: {
     clouddata: [],
+    preference: {},
     editModal: {
       index: 0
     }
@@ -37,7 +38,7 @@ let app = new Vue({
   },
   created() {
     let that = this
-    chrome.storage.sync.get(['iitcdata'], res => {
+    chrome.storage.sync.get(['iitcdata', 'preference'], res => {
       let array = []
       for (let i in res.iitcdata) {
         let data = res.iitcdata[i]
@@ -47,6 +48,9 @@ let app = new Vue({
         })
       }
       that.clouddata = array
+      that.preference = res.preference
+      console.log(this.bgcolor)
+      this.bgcolor = ''
     })
   },
   computed: {
@@ -62,6 +66,17 @@ let app = new Vue({
           this.clouddata[this.editModal.index].data = res
         }
         this.effect()
+      }
+    },
+    bgcolor: {
+      get() {
+        switch (this.preference.theme) {
+          case 'prime-purple': return '#040F1C'
+          case 'classic-cyan': return '#000'
+        }
+      },
+      set() {
+        $('body').css('background-color', this.bgcolor)
       }
     }
   }

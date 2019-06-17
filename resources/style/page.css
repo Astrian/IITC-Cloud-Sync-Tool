@@ -1,0 +1,69 @@
+/* Classic Cyan Theme */
+.classic-cyan {
+  color: #5afbea;
+}
+.classic-cyan.container {
+  background-color: #000;
+}
+
+/* Prime Purple Theme */
+.prime-purple h1, .prime-purple h2, .prime-purple h3, .prime-purple h4, .prime-purple h5, .prime-purple h6 {
+  color: #9AA4F8;
+}
+.prime-purple p, .prime-purple table, .prime-purple pre, .prime-purple code {
+  color: #7982E0;
+}
+.prime-purple.container {
+  background-color: #040F1C;
+}
+.prime-purple .list-group li a {
+  color: #7982E0;
+  border-radius: 4px;
+}
+.prime-purple .list-group li a:hover {
+  background: rgba(179, 185, 240, 0.1);
+}
+.prime-purple .list-group li a.active {
+  color: #9AA4F8;
+  background: rgba(179, 185, 240, 0.4);
+}
+
+/* General Styles */
+#app {
+  width: 400px;
+}
+#app, #vue {
+  font-family: exo-regular;
+}
+.container {
+  padding: 18px;
+}
+.pagetitle {
+  font-size: 30px;
+}
+.optiontitle {
+  font-size: 25px;
+  padding-top: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: exo-bold;
+}
+
+.modal-content p {
+  color: #555;
+}
+
+.modal-content h1, .modal-content h2, .modal-content h3, .modal-content h4, .modal-content h5, .modal-content h6 {
+  color: #000;
+}
+
+.modal textarea {
+  width: 100%;
+  border-color: rgb(172, 172, 172);
+  border-radius: 4px;
+  resize: none;
+}
+
+.modal textarea:focus {
+  outline: none;
+}
